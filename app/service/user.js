@@ -51,7 +51,7 @@ class UserService extends Service {
 
   async latestTimeCount() {
     const {model} = this.ctx.app
-    const sql = 'SELECT DATE_FORMAT(dy.latest_time,\'%Y-%m-%d\') latest_time, COUNT(0) count FROM dy_user dy GROUP BY TO_DAYS(dy.latest_time)'
+    const sql = 'SELECT COUNT(0) count,t.latest_date FROM dy_user t GROUP BY t.latest_date'
     const res = await model.query(sql)
     return this.Res.createBySuccessData(res[0])
   }
