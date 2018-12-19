@@ -13,7 +13,8 @@ class UserController extends Controller {
   }
   async latestTimeCount() {
     const {ctx, service} = this
-    ctx.body = await service.user.latestTimeCount()
+    const {request} = ctx
+    ctx.body = await service.user.latestTimeCount(request.query)
   }
 }
 

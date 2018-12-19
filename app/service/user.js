@@ -49,11 +49,18 @@ class UserService extends Service {
     return this.Res.createBySuccessData(res[0])
   }
 
-  async latestTimeCount() {
+  async latestTimeCount(query = {}) {
     const {model} = this.ctx.app
-    const sql = 'SELECT COUNT(0) count,t.latest_date FROM dy_user t GROUP BY t.latest_date'
-    const res = await model.query(sql)
-    return this.Res.createBySuccessData(res[0])
+    const {start, end} = query
+    if (start && end) {
+      const sql = 'SELECT COUNT(0) count,t.latest_date FROM dy_user t WHERE t.latest_date >= ? and t.latest_date <= ? GROUP BY t.latest_date'
+      const res = await model.query(sql, [start, end])
+      return this.Res.createBySuccessData(res[0])
+    } else {
+      const sql = 'SELECT COUNT(0) count,t.latest_date FROM dy_user t GROUP BY t.latest_date'
+      const res = await model.query(sql)
+      return this.Res.createBySuccessData(res[0])
+    }
   }
 }
 
