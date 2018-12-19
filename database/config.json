@@ -1,0 +1,18 @@
+{
+  "development": {
+    "username": "swk",
+    "password": "icpdb",
+    "database": "danmu",
+    "host": "47.94.153.220",
+    "port": 3389,
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "swk",
+    "password": "icpdb",
+    "database": "danmu",
+    "host": "47.94.153.220",
+    "port": 3389,
+    "dialect": "mysql"
+  }
+}
