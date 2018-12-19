@@ -53,6 +53,7 @@ class UserService extends Service {
     const {model} = this.ctx.app
     const {start, end} = query
     if (start && end) {
+      console.log(start, end)
       const sql = 'SELECT COUNT(0) count,t.latest_date FROM dy_user t WHERE t.latest_date >= ? and t.latest_date <= ? GROUP BY t.latest_date'
       const res = await model.query(sql, [start, end])
       return this.Res.createBySuccessData(res[0])
