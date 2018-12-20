@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "test attempt",
   "dependencies": {
-    "egg": "2.10.0",
-    "egg-cors": "^2.1.0",
-    "egg-scripts": "^2.5.0",
-    "egg-sequelize": "^4.0.2",
+    "egg": "^2.14.2",
+    "egg-cors": "^2.1.2",
+    "egg-scripts": "^2.11.0",
+    "egg-sequelize": "^4.2.0",
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
     "mysql2": "^1.6.1"
